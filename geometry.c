@@ -104,5 +104,11 @@ int run(char* str, Circle* c)
 
 void print_circle(Circle* c)
 {
+    printf("%.0f. ", c->x);
     printf("circle(%.1f %.1f, %.1f)\n", c->x, c->y, c->r);
+    float perimeter = 3.1415 * 2 * c->r;
+    float area = 3.1415 * c->r * c->r;
+    printf("    perimeter = %.4f\n", perimeter);
+    printf("    area = %.4f\n", area);
+    printf("\n");
 }
