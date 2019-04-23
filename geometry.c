@@ -7,11 +7,12 @@ typedef struct {
     double r;
 } Circle;
 
-void print_circle(Circle* c);
+void print_circle(Circle* c, int w0);
 int run(char* str, Circle* c);
 
 int main()
 {
+    int w0=1;
     FILE* file;
     file = fopen("coordinates.txt", "r");
     if (!file) {
@@ -25,7 +26,8 @@ int main()
         if (run(str, c) == -1) {
             return -1;
         }
-        print_circle(c);
+        print_circle(c, w0);
+        w0++;
     }
 
     fclose(file);
@@ -102,9 +104,9 @@ int run(char* str, Circle* c)
     return 0;
 }
 
-void print_circle(Circle* c)
+void print_circle(Circle* c, int w0)
 {
-    printf("%.0f. ", c->x);
+    printf("%d. ", w0);
     printf("circle(%.1f %.1f, %.1f)\n", c->x, c->y, c->r);
     float perimeter = 3.1415 * 2 * c->r;
     float area = 3.1415 * c->r * c->r;
