@@ -1,10 +1,10 @@
+#include "circle.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "circle.h"
 
 int main()
 {
-    int w0=1;
+    int w0 = 1;
     FILE* file;
     file = fopen("coordinates.txt", "r");
     if (!file) {
