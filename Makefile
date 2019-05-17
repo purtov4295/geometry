@@ -14,7 +14,6 @@ $(BUILD_SRC)/main.o: src/main.c
 $(BUILD_SRC)/circle.o: src/circle.c
 	gcc -Wall -Werror -c src/circle.c -o $(BUILD_SRC)/circle.o
 
-bin/test: bin/test
 
 bin/test: $(BUILD_TEST)/main.o $(BUILD_TEST)/circle.o
 	gcc -Wall -Werror $(BUILD_TEST)/main.o $(BUILD_TEST)/circle.o -o bin/test -lm
